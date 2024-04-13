@@ -12,7 +12,7 @@ describe('Greet', () => {
   });
 });
 
-describe.only('Greet Name', () => {
+describe('Greet Name', () => {
   test('renders with name', () => {
     render(<GreetWithProps name="NZKKS" />);
     const textElement = screen.getByText('Hello NZKKS');
