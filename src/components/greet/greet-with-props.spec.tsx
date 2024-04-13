@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import GreetWithProps from './greet-with-props';
 
 describe('Greet', () => {
-  it('renders correctly', () => {
+  fit('renders correctly', () => {
     render(<GreetWithProps />);
     const textElement = screen.getByText('Hello');
     expect(textElement).toBeInTheDocument();
