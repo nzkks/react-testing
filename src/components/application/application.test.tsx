@@ -26,6 +26,9 @@ describe('Application', () => {
     const imgElement = screen.getByAltText('a person with a laptop'); // getByAltText is used for elements which supports alt attribute like img, <input />, <area /> or custom HTML elements with alt tag
     expect(imgElement).toBeInTheDocument();
 
+    const customElement = screen.getByTestId('custom-element');
+    expect(customElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole('textbox', {
       name: 'Name' // label text of this textbox
     });
