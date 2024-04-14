@@ -6,7 +6,7 @@ export const Application = () => {
       <form>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" placeholder="Fullname" />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
