@@ -17,6 +17,9 @@ describe('Application', () => {
     });
     expect(sectionHeadingElement).toBeInTheDocument();
 
+    const paragraphElement = screen.getByText('All fields are mandatory'); // getByText is used for testing the div,p and span tags
+    expect(paragraphElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole('textbox', {
       name: 'Name' // label text of this textbox
     });
