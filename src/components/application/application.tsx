@@ -6,6 +6,10 @@ export const Application = () => {
         <input type="text" name="name" id="name" />
       </div>
       <div>
+        <label htmlFor="bio">Bio</label>
+        <textarea name="bio" id="bio" />
+      </div>
+      <div>
         <label htmlFor="job-location">Job Location</label>
         <select name="job-location" id="job-location">
           <option value="">Select a country</option>
