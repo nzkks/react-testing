@@ -20,6 +20,9 @@ describe('Application', () => {
     const paragraphElement = screen.getByText('All fields are mandatory'); // getByText is used for testing the div,p and span tags
     expect(paragraphElement).toBeInTheDocument();
 
+    const imgElement = screen.getByAltText('a person with a laptop'); // getByAltText is used for elements which supports alt attribute like img, <input />, <area /> or custom HTML elements with alt tag
+    expect(imgElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole('textbox', {
       name: 'Name' // label text of this textbox
     });
