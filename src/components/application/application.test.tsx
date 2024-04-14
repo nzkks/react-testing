@@ -5,6 +5,16 @@ describe('Application', () => {
   test('renders correctly', () => {
     render(<Application />);
 
+    const pageHeadingElement = screen.getByRole('heading', {
+      name: 'Job Application Form'
+    });
+    expect(pageHeadingElement).toBeInTheDocument();
+
+    const sectionHeadingElement = screen.getByRole('heading', {
+      name: 'Section 1'
+    });
+    expect(sectionHeadingElement).toBeInTheDocument();
+
     const nameElement = screen.getByRole('textbox', {
       name: 'Name' // label text of this textbox
     });
