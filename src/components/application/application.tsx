@@ -13,7 +13,7 @@ export const Application = () => {
           <textarea name="bio" id="bio" />
         </div>
         <div>
-          <label htmlFor="job-location">Job Location</label>
+          <label htmlFor="job-location">Name</label>
           <select name="job-location" id="job-location">
             <option value="">Select a country</option>
             <option value="IN">India</option>
