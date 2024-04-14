@@ -5,13 +5,15 @@ describe('Application', () => {
   test('renders correctly', () => {
     render(<Application />);
 
+    // getByRole has other options as well: name, level, hidden, selected, checked, pressed
+
     const pageHeadingElement = screen.getByRole('heading', {
-      name: 'Job Application Form'
+      level: 1
     });
     expect(pageHeadingElement).toBeInTheDocument();
 
     const sectionHeadingElement = screen.getByRole('heading', {
-      name: 'Section 1'
+      level: 2
     });
     expect(sectionHeadingElement).toBeInTheDocument();
 
