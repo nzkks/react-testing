@@ -10,6 +10,11 @@ describe('Application', () => {
     });
     expect(nameElement).toBeInTheDocument();
 
+    const bioElement = screen.getByRole('textbox', {
+      name: 'Bio' // label text of this textarea
+    });
+    expect(bioElement).toBeInTheDocument();
+
     const jobLocationElement = screen.getByRole('combobox');
     expect(jobLocationElement).toBeInTheDocument();
 
