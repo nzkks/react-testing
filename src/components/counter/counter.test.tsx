@@ -26,4 +26,15 @@ describe('Counter', () => {
 
     expect(screen.getByRole('heading')).toHaveTextContent('1');
   });
+
+  test('renders a count of 2 after clicking the increment button twice', async () => {
+    user.setup();
+    render(<Counter />);
+    const incrementButton = screen.getByRole('button', { name: 'Increment' });
+
+    await user.click(incrementButton);
+    await user.click(incrementButton);
+
+    expect(screen.getByRole('heading')).toHaveTextContent('2');
+  });
 });
