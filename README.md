@@ -19,9 +19,11 @@ press w to show below
 - Press t to filter by a test name regex pattern.
 - Press Enter to trigger a test run.
 
-#### Order of priority for using RTL queries (query methods).
+#### The below methods are used to find elements that DOES exists in the DOM
 
-First choice is by using `getByRole` or `getAllByRole` method. If not possible then `getByLabelText` or `getAllByLabelText`. If not possible then `getByPlaceholderText` or `getAllByPlaceholderText`. The pattern goes on like this.
+**Order of priority for using RTL queries (query methods)**
+
+First choice is by using `getByRole` or `getAllByRole` method. If not possible then `getByLabelText` or `getAllByLabelText`. If not possible then `getByPlaceholderText` or `getAllByPlaceholderText`. The pattern goes on like this for the below methods.
 
 **screen.**
 
@@ -35,3 +37,16 @@ First choice is by using `getByRole` or `getAllByRole` method. If not possible t
 | 6. `getByAltText`         | 6. `getAllByAltText`         |
 | 7. `getByTitle`           | 7. `getAllByTitle`           |
 | 8. `getByTestId`          | 8. `getAllByTestId`          |
+
+#### The below methods are used to find elements that DOES NOT exists in the DOM
+
+| Individual Element          | Multiple Elements              |
+| --------------------------- | ------------------------------ |
+| 1. `queryByRole`            | 1. `queryAllByRole`            |
+| 2. `queryByLabelText`       | 2. `queryAllByLabelText`       |
+| 3. `queryByPlaceholderText` | 3. `queryAllByPlaceholderText` |
+| 4. `queryByText`            | 4. `queryAllByText`            |
+| 5. `queryByDisplayValue`    | 5. `queryAllByDisplayValue`    |
+| 6. `queryByAltText`         | 6. `queryAllByAltText`         |
+| 7. `queryByTitle`           | 7. `queryAllByTitle`           |
+| 8. `queryByTestId`          | 8. `queryAllByTestId`          |
