@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { Skills } from './skills';
 
 describe('skills', () => {
@@ -48,5 +48,25 @@ describe('skills', () => {
       { timeout: 2000 }
     );
     expect(startLearningButton).toBeInTheDocument();
+  });
+
+  test('Logged in success text is eventually displayed', async () => {
+    render(<Skills skills={skills} />);
+
+    const loggedInSucess = await screen.findByText('success', { exact: false }, { timeout: 2000 });
+    expect(loggedInSucess).toBeInTheDocument();
+  });
+
+  test('Logged in success text is eventually disappeared', async () => {
+    render(<Skills skills={skills} />);
+
+    // The waitFor async helper function retries until the wrapped function stops throwing an error. This can be used to assert that an element disappears from the page.
+
+    // element is initially present...
+    // note use of queryBy instead of getBy to return null
+    // instead of throwing in the query itself
+    await waitFor(() => {
+      expect(screen.queryByText('success', { exact: false })).not.toBeInTheDocument();
+    });
   });
 });
