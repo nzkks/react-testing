@@ -20,6 +20,9 @@ describe('Application', () => {
     const paragraphElement = screen.getByText('All fields are mandatory'); // getByText is used for testing the div,p and span tags
     expect(paragraphElement).toBeInTheDocument();
 
+    const paragraphElement2 = screen.getByText('ields are manda', { exact: false }); // substring match
+    expect(paragraphElement2).toBeInTheDocument();
+
     const closeElement = screen.getByTitle('close');
     expect(closeElement).toBeInTheDocument();
 
@@ -58,6 +61,9 @@ describe('Application', () => {
 
     const termsElement2 = screen.getByLabelText('I agree to the terms and conditions');
     expect(termsElement2).toBeInTheDocument();
+
+    const termsElement3 = screen.getByLabelText('gree to the term', { exact: false }); // substring match
+    expect(termsElement3).toBeInTheDocument();
 
     const submitButtonElement = screen.getByRole('button');
     expect(submitButtonElement).toBeInTheDocument();
