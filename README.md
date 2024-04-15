@@ -55,17 +55,39 @@ press w to show below
 
 ---
 
-#### Pointer Interactions
+### User Interactions
 
-**Convenience APIs**
+#### Convenience APIs
 
+**Clicks**
 `click()`
 `dblClick()`
 `tripleClick()`
+
+**Mouse movement**
 `hover()`
 `unhover()`
 
-**Pointer APIs**
+##### Keyboard
+
+`tab()`
+
+#### Utility APIs
+
+`clear()`
+`selectOptions()`
+`deselectOptions()`
+`type()`
+`upload()`
+
+#### Clipboard
+
+`copy()`
+`cut()`
+`paste()`
+
+#### Pointer
+
 `pointer({keys: '[MouseLeft]'})`
 `pointer({keys: '[MouseLeft][MouseRight]'})`
 
