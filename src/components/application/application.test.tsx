@@ -83,6 +83,9 @@ describe('Application', () => {
     const termsElement3 = screen.getByLabelText('gree to the term', { exact: false }); // substring match
     expect(termsElement3).toBeInTheDocument();
 
+    const termsElement6 = screen.getByLabelText((content, element) => content.startsWith('I agree'));
+    expect(termsElement6).toBeInTheDocument();
+
     const submitButtonElement = screen.getByRole('button');
     expect(submitButtonElement).toBeInTheDocument();
   });
