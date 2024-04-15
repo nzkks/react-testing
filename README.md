@@ -19,6 +19,8 @@ press w to show below
 - Press t to filter by a test name regex pattern.
 - Press Enter to trigger a test run.
 
+---
+
 #### Query methods
 
 **Order of priority for using RTL queries (query methods)**
@@ -46,3 +48,7 @@ press w to show below
 
 **Example**
 `screen.findByRole` OR `screen.findAllByRole`
+
+---
+
+**Install 'Testing Playground' Chrome extension and select the elements of interest to test. The tool suggests the best query method to use for us to copy / understand.**
