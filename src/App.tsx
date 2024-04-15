@@ -2,16 +2,19 @@
 import './App.css';
 // import { Skills } from './components/skills/skills';
 import { Counter } from './components/counter/counter';
+import { AppProviders } from './providers/AppProviders';
 
 // const skills = ['HTML', 'CSS', 'JavaScript'];
 
 function App() {
   return (
-    <div className="App">
-      {/* <Application /> */}
-      {/* <Skills skills={skills} /> */}
-      <Counter />
-    </div>
+    <AppProviders>
+      <div className="App">
+        {/* <Application /> */}
+        {/* <Skills skills={skills} /> */}
+        <Counter />
+      </div>
+    </AppProviders>
   );
 }
 
