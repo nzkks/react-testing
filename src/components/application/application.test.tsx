@@ -48,6 +48,9 @@ describe('Application', () => {
     const nameElement4 = screen.getByDisplayValue('NZKKS');
     expect(nameElement4).toBeInTheDocument();
 
+    const nameElement5 = screen.getByDisplayValue('nzkks', { exact: false }); // ignore case
+    expect(nameElement5).toBeInTheDocument();
+
     const bioElement = screen.getByRole('textbox', {
       name: 'Bio' // label text of this textarea
     });
@@ -61,6 +64,9 @@ describe('Application', () => {
 
     const termsElement2 = screen.getByLabelText('I agree to the terms and conditions');
     expect(termsElement2).toBeInTheDocument();
+
+    const termsElement4 = screen.getByLabelText('i agree', { exact: false }); // ignore case, substring match
+    expect(termsElement4).toBeInTheDocument();
 
     const termsElement3 = screen.getByLabelText('gree to the term', { exact: false }); // substring match
     expect(termsElement3).toBeInTheDocument();
