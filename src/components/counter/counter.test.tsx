@@ -37,4 +37,20 @@ describe('Counter', () => {
 
     expect(screen.getByRole('heading')).toHaveTextContent('2');
   });
+
+  test('renders a count of 10 after clicking the set button', async () => {
+    user.setup();
+    render(<Counter />);
+    const amountInput = screen.getByRole('spinbutton');
+
+    await user.type(amountInput, '10');
+
+    expect(amountInput).toHaveValue(10);
+
+    const setButton = screen.getByRole('button', { name: 'Set' });
+
+    await user.click(setButton);
+
+    expect(screen.getByRole('heading')).toHaveTextContent('10');
+  });
 });
