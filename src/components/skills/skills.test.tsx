@@ -52,8 +52,9 @@ describe('skills', () => {
 
   test('Logged in success text is eventually displayed', async () => {
     render(<Skills skills={skills} />);
-
+    // screen.debug(); // once checked, make sure to comment or better delete the debug lines
     const loggedInSucess = await screen.findByText('success', { exact: false }, { timeout: 2000 });
+    // screen.debug();
     expect(loggedInSucess).toBeInTheDocument();
   });
 
