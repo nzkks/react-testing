@@ -26,6 +26,9 @@ describe('Application', () => {
     const closeElement = screen.getByTitle('close');
     expect(closeElement).toBeInTheDocument();
 
+    const closeElement2 = screen.getByTitle(/C?losE/i); // substring match, ignore case, searches for "close" or "lose"
+    expect(closeElement2).toBeInTheDocument();
+
     const imgElement = screen.getByAltText('a person with a laptop'); // getByAltText is used for elements which supports alt attribute like img, <input />, <area /> or custom HTML elements with alt tag
     expect(imgElement).toBeInTheDocument();
 
@@ -51,6 +54,12 @@ describe('Application', () => {
     const nameElement5 = screen.getByDisplayValue('nzkks', { exact: false }); // ignore case
     expect(nameElement5).toBeInTheDocument();
 
+    const nameElement6 = screen.getByDisplayValue(/NZKKS/); // regex matching
+    expect(nameElement6).toBeInTheDocument();
+
+    const nameElement7 = screen.getByDisplayValue(/^nzkks$/i); // regex matching, ignore case
+    expect(nameElement7).toBeInTheDocument();
+
     const bioElement = screen.getByRole('textbox', {
       name: 'Bio' // label text of this textarea
     });
@@ -67,6 +76,9 @@ describe('Application', () => {
 
     const termsElement4 = screen.getByLabelText('i agree', { exact: false }); // ignore case, substring match
     expect(termsElement4).toBeInTheDocument();
+
+    const termsElement5 = screen.getByLabelText(/i agree/i); // regex matching, ignore case, substring match
+    expect(termsElement5).toBeInTheDocument();
 
     const termsElement3 = screen.getByLabelText('gree to the term', { exact: false }); // substring match
     expect(termsElement3).toBeInTheDocument();
