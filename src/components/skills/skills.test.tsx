@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { logRoles, render, screen, waitFor } from '@testing-library/react';
 import { Skills } from './skills';
 
 describe('skills', () => {
@@ -51,7 +51,9 @@ describe('skills', () => {
   });
 
   test('Logged in success text is eventually displayed', async () => {
-    render(<Skills skills={skills} />);
+    const view = render(<Skills skills={skills} />);
+    logRoles(view.container); // once checked, make sure to comment or better delete this line
+
     // screen.debug(); // once checked, make sure to comment or better delete the debug lines
     const loggedInSucess = await screen.findByText('success', { exact: false }, { timeout: 2000 });
     // screen.debug();
