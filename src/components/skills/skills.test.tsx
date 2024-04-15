@@ -52,7 +52,7 @@ describe('skills', () => {
 
   test('Logged in success text is eventually displayed', async () => {
     const view = render(<Skills skills={skills} />);
-    logRoles(view.container); // once checked, make sure to comment or better delete this line
+    // logRoles(view.container); // once checked, make sure to comment or better delete this line
 
     // screen.debug(); // once checked, make sure to comment or better delete the debug lines
     const loggedInSucess = await screen.findByText('success', { exact: false }, { timeout: 2000 });
