@@ -1,9 +1,10 @@
 # React Testing Library (RTL)
 
-Lets say, in the (CRA created) package.json, there is a npm script line "test": "react-scripts test"
+Lets say, in the (CRA created) package.json, there is a npm script line
+`"test": "react-scripts test"`
 
 **Type below to run the test**
-npm run test
+`npm run test`
 
 Once shown the test results the application will be in watch mode.
 
@@ -20,21 +21,17 @@ press w to show below
 
 #### Order of priority for using RTL queries (query methods).
 
-First choice is by using getByRole method. If not possible then getByLabelText. If not possible then getByPlaceholderText. The pattern goes on like this.
+First choice is by using `getByRole` or `getAllByRole` method. If not possible then `getByLabelText` or `getAllByLabelText`. If not possible then `getByPlaceholderText` or `getAllByPlaceholderText`. The pattern goes on like this.
 
 **screen.**
 
-1. getByRole
-2. getByLabelText
-3. getByPlaceholderText
-4. getByText
-5. getByDisplayValue
-
-===================
-
-6. getByAltText
-7. getByTitle
-
-===================
-
-8. getByTestId
+| Individual Element        | Multiple Elements            |
+| ------------------------- | ---------------------------- |
+| 1. `getByRole`            | 1. `getAllByRole`            |
+| 2. `getByLabelText`       | 2. `getAllByLabelText`       |
+| 3. `getByPlaceholderText` | 3. `getAllByPlaceholderText` |
+| 4. `getByText`            | 4. `getAllByText`            |
+| 5. `getByDisplayValue`    | 5. `getAllByDisplayValue`    |
+| 6. `getByAltText`         | 6. `getAllByAltText`         |
+| 7. `getByTitle`           | 7. `getAllByTitle`           |
+| 8. `getByTestId`          | 8. `getAllByTestId`          |
