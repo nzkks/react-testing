@@ -35,4 +35,14 @@ describe('skills', () => {
     });
     expect(startLearningButton).not.toBeInTheDocument();
   });
+
+  test('Start learning button is eventually displayed', async () => {
+    render(<Skills skills={skills} />);
+
+    // The async methods findBy or findAllBy is used in a scenario where element is initially not present and wait (default wait/timeout is 1000ms) for appearance and return the element
+    const startLearningButton = await screen.findByRole('button', {
+      name: 'Start learning'
+    });
+    expect(startLearningButton).toBeInTheDocument();
+  });
 });
