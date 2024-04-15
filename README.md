@@ -99,3 +99,9 @@ In order to press a button without releasing it, the button name is suffixed wit
 
 For just releasing a previously pressed button, the tag is started with /
 `pointer('[/MouseLeft]')`
+
+#### Keyboard
+
+`keyboard('foo')` translates to: f, o, o
+`keyboard('{Shift}{f}{o}{o}')` translates to: Shift, f, o, o
+`keyboard('{Shift>}A{/Shift}')` translates to: Shift(down), A, Shift(up)
