@@ -52,3 +52,28 @@ press w to show below
 ---
 
 **Install 'Testing Playground' Chrome extension and select the elements of interest to test. The tool suggests the best query method to use for us to copy / understand.**
+
+---
+
+#### Pointer Interactions
+
+**Convenience APIs**
+
+`click()`
+`dblClick()`
+`tripleClick()`
+`hover()`
+`unhover()`
+
+**Pointer APIs**
+`pointer({keys: '[MouseLeft]'})`
+`pointer({keys: '[MouseLeft][MouseRight]'})`
+
+We can also just pass the string like below if 'keys' is the only argument to the function
+`pointer('[MouseLeft][MouseRight]')`
+
+In order to press a button without releasing it, the button name is suffixed with >
+`pointer('[MouseLeft>]')`
+
+For just releasing a previously pressed button, the tag is started with /
+`pointer('[/MouseLeft]')`
