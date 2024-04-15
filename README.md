@@ -19,34 +19,30 @@ press w to show below
 - Press t to filter by a test name regex pattern.
 - Press Enter to trigger a test run.
 
-#### The below methods are used to find elements that DOES exists in the DOM
+#### Query methods
 
 **Order of priority for using RTL queries (query methods)**
 
-First choice is by using `getByRole` or `getAllByRole` method. If not possible then `getByLabelText` or `getAllByLabelText`. If not possible then `getByPlaceholderText` or `getAllByPlaceholderText`. The pattern goes on like this for the below methods.
+1. `ByRole`
+2. `ByLabelText`
+3. `ByPlaceholderText`
+4. `ByText`
+5. `ByDisplayValue`
+6. `ByAltText`
+7. `ByTitle`
+8. `ByTestId`
 
-**screen.**
+#### To assert elements that DOES exists in the DOM, use get / getAll methods
 
-| Individual Element        | Multiple Elements            |
-| ------------------------- | ---------------------------- |
-| 1. `getByRole`            | 1. `getAllByRole`            |
-| 2. `getByLabelText`       | 2. `getAllByLabelText`       |
-| 3. `getByPlaceholderText` | 3. `getAllByPlaceholderText` |
-| 4. `getByText`            | 4. `getAllByText`            |
-| 5. `getByDisplayValue`    | 5. `getAllByDisplayValue`    |
-| 6. `getByAltText`         | 6. `getAllByAltText`         |
-| 7. `getByTitle`           | 7. `getAllByTitle`           |
-| 8. `getByTestId`          | 8. `getAllByTestId`          |
+**Example**
+`screen.getByRole` OR `screen.getAllByRole`
 
-#### The below methods are used to find elements that DOES NOT exists in the DOM
+#### To assert elements that DOES NOT exists in the DOM, use query / queryAll methods
 
-| Individual Element          | Multiple Elements              |
-| --------------------------- | ------------------------------ |
-| 1. `queryByRole`            | 1. `queryAllByRole`            |
-| 2. `queryByLabelText`       | 2. `queryAllByLabelText`       |
-| 3. `queryByPlaceholderText` | 3. `queryAllByPlaceholderText` |
-| 4. `queryByText`            | 4. `queryAllByText`            |
-| 5. `queryByDisplayValue`    | 5. `queryAllByDisplayValue`    |
-| 6. `queryByAltText`         | 6. `queryAllByAltText`         |
-| 7. `queryByTitle`           | 7. `queryAllByTitle`           |
-| 8. `queryByTestId`          | 8. `queryAllByTestId`          |
+**Example**
+`screen.queryByRole` OR `screen.queryAllByRole`
+
+#### To assert elements that DOES NOT exists in the DOM initially. But eventually appears
+
+**Example**
+`screen.findByRole` OR `screen.findAllByRole`
