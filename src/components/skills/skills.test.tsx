@@ -30,7 +30,7 @@ describe('skills', () => {
   test('Start learning button is not rendered', () => {
     render(<Skills skills={skills} />);
 
-    const startLearningButton = screen.getByRole('button', {
+    const startLearningButton = screen.queryByRole('button', {
       name: 'Start learning'
     });
     expect(startLearningButton).not.toBeInTheDocument();
