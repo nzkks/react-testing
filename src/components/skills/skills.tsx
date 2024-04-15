@@ -8,7 +8,7 @@ export const Skills = (props: skillsProps) => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoggedIn(true);
-    }, 500);
+    }, 1001);
   }, []);
 
   return (
