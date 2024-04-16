@@ -2,7 +2,8 @@
 import './App.css';
 // import { Skills } from './components/skills/skills';
 // import { Counter } from './components/counter/counter';
-import { MuiMode } from './components/mui/mui-mode';
+// import { MuiMode } from './components/mui/mui-mode';
+import { Users } from './components/users/users';
 import { AppProviders } from './providers/AppProviders';
 
 // const skills = ['HTML', 'CSS', 'JavaScript'];
@@ -14,7 +15,8 @@ function App() {
         {/* <Application /> */}
         {/* <Skills skills={skills} /> */}
         {/* <Counter /> */}
-        <MuiMode />
+        {/* <MuiMode /> */}
+        <Users />
       </div>
     </AppProviders>
   );
