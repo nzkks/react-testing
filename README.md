@@ -105,3 +105,42 @@ For just releasing a previously pressed button, the tag is started with /
 `keyboard('foo')` translates to: f, o, o
 `keyboard('{Shift}{f}{o}{o}')` translates to: Shift, f, o, o
 `keyboard('{Shift>}A{/Shift}')` translates to: Shift(down), A, Shift(up)
+
+---
+
+### Static Analysis testing
+
+Static testing analyses aspects such as readability, consistency, error handling, type checking and alignment with best practices
+
+#### ES Lint
+
+1. Install `ESLint` VSCode extension.
+2. `npm i -D eslint-plugin-jest-dom`
+3. In the `package.json` file, add `"eslintConfig": { "extends": [ "plugin:jest-dom/recommended"] },`
+4. Again in the `package.json` file, add a npm script command `"scripts": { "lint": "eslint --ignore-path .gitignore .", },`
+
+#### Prettier
+
+1. Install `Prettier` VSCode extension. With this, we can add VSCode settings like `editor.defaultFormatter` and `editor.formatOnSave`, etc
+2. `npm i -D --exact prettier`
+3. In the `package.json` file, add a npm script command `"scripts": { "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"", },`
+4. Add `.prettierrc.json` and add any formatting rules. example: `{ "semi": true, "singleQuote": true }`
+5. `npm i -D eslint-config-prettier`
+6. In the `package.json` file, add `"eslintConfig": { "extends": [ "eslint-config-prettier" ] },`
+
+#### Husky
+
+**pre-commit**
+
+1. `npx husky-init && npm install`. This will create .husky folder with `pre-commit` cmmand file. By default there will be a npm command to run the test.
+2. Now we can change it to run lint and format npm scripts with `npm run lint && npm run format`
+
+**pre-push**
+
+1. `npx husky add .husky/pre-push "npm test -- --watchAll=false"`. Tgis will create a `pre-push` command file with the specfied line. Basically before pushing the commit to remote, run the test. If all the tests are successful then push it.
+
+#### Lint-Staged
+
+1. `npm i -D lint-staged`
+2. In the Husky's `pre-commit` command file, replace the `npm run lint && npm run format` line to `npx lint-staged`. This will make sure, instead of running the linting and formatting to all project/application files, just the staged files.
+3. In the `package.json` file, add `"lint-staged": { "*.{ts,tsx}": [ "eslint" ], "*.{ts,tsx,css,scss}": [ "prettier --write" ] }`
