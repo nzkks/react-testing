@@ -10,7 +10,7 @@ describe('Users', () => {
 
   // test('renders a list of users', async () => {
   //   render(<Users />);
-  //   const users = await screen.findByRole('list');
-  //   expect(users).toContainHTML('<li></li>');
+  //   const users = await screen.findByRole('listitem');
+  //   expect(users).toHaveLength(3);
   // });
 });
