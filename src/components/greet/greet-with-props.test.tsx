@@ -7,15 +7,15 @@ import GreetWithProps from './greet-with-props';
 describe('Greet', () => {
   test('renders correctly', () => {
     render(<GreetWithProps />);
-    const textElement = screen.getByText('Hello');
+    const textElement = screen.getByText('Hello Guest');
     expect(textElement).toBeInTheDocument();
   });
 });
 
-// describe('Greet Name', () => {
-//   test('renders with name', () => {
-//     render(<GreetWithProps name="NZKKS" />);
-//     const textElement = screen.getByText('Hello NZKKS');
-//     expect(textElement).toBeInTheDocument();
-//   });
-// });
+describe('Greet Name', () => {
+  test('renders with name', () => {
+    render(<GreetWithProps name="NZKKS" />);
+    const textElement = screen.getByText('Hello NZKKS');
+    expect(textElement).toBeInTheDocument();
+  });
+});

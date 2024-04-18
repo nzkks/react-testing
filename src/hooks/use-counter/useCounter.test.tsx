@@ -11,8 +11,8 @@ describe('useCounter', () => {
   test('shold accept and render the same initial count', () => {
     const { result } = renderHook(useCounter, {
       initialProps: {
-        initialCount: 10
-      }
+        initialCount: 10,
+      },
     });
 
     expect(result.current.count).toBe(10);

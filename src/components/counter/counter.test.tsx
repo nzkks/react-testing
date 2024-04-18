@@ -8,7 +8,9 @@ describe('Counter', () => {
     render(<Counter />);
 
     expect(screen.getByRole('heading')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Increment' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Increment' })
+    ).toBeInTheDocument();
   });
 
   test('renders a count of 0', () => {

@@ -3,8 +3,8 @@ import { UseCounterProps } from './useCounter.types';
 
 export const useCounter = ({ initialCount = 0 }: UseCounterProps = {}) => {
   const [count, setCount] = useState(initialCount);
-  const increment = () => setCount(count => count + 1);
-  const decrement = () => setCount(count => count - 1);
+  const increment = () => setCount((count) => count + 1);
+  const decrement = () => setCount((count) => count - 1);
 
   return { count, increment, decrement };
 };

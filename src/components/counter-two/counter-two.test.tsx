@@ -14,7 +14,13 @@ describe('CounterTwo', () => {
     const incrementHandler = jest.fn(); // mocking functions
     const decrementHandler = jest.fn(); // mocking functions
 
-    render(<CounterTwo count={0} handleIncrement={incrementHandler} handleDecrement={decrementHandler} />);
+    render(
+      <CounterTwo
+        count={0}
+        handleIncrement={incrementHandler}
+        handleDecrement={decrementHandler}
+      />
+    );
 
     await userEvent.click(screen.getByRole('button', { name: 'Increment' }));
     expect(incrementHandler).toHaveBeenCalledTimes(1);

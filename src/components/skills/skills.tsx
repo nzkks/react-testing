@@ -23,12 +23,16 @@ export const Skills = (props: skillsProps) => {
     <>
       {isLoggedInTextShown && <div>Logged in success!</div>}
       <ul>
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
       </ul>
 
-      {isLoggedIn ? <button>Start learning</button> : <button onClick={() => setIsLoggedIn(true)}>Login</button>}
+      {isLoggedIn ? (
+        <button>Start learning</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+      )}
     </>
   );
 };

@@ -22,7 +22,7 @@ describe('skills', () => {
     render(<Skills skills={skills} />);
 
     const loginButton = screen.getByRole('button', {
-      name: 'Login'
+      name: 'Login',
     });
     expect(loginButton).toBeInTheDocument();
   });
@@ -31,7 +31,7 @@ describe('skills', () => {
     render(<Skills skills={skills} />);
 
     const startLearningButton = screen.queryByRole('button', {
-      name: 'Start learning'
+      name: 'Start learning',
     });
     expect(startLearningButton).not.toBeInTheDocument();
   });
@@ -43,7 +43,7 @@ describe('skills', () => {
     const startLearningButton = await screen.findByRole(
       'button',
       {
-        name: 'Start learning'
+        name: 'Start learning',
       },
       { timeout: 2000 }
     );
@@ -55,7 +55,11 @@ describe('skills', () => {
     // logRoles(view.container); // once checked, make sure to comment or better delete this line
 
     // screen.debug(); // once checked, make sure to comment or better delete the debug lines
-    const loggedInSucess = await screen.findByText('success', { exact: false }, { timeout: 2000 });
+    const loggedInSucess = await screen.findByText(
+      'success',
+      { exact: false },
+      { timeout: 2000 }
+    );
     // screen.debug();
     expect(loggedInSucess).toBeInTheDocument();
   });
@@ -69,7 +73,9 @@ describe('skills', () => {
     // note use of queryBy instead of getBy to return null
     // instead of throwing in the query itself
     await waitFor(() => {
-      expect(screen.queryByText('success', { exact: false })).not.toBeInTheDocument();
+      expect(
+        screen.queryByText('success', { exact: false })
+      ).not.toBeInTheDocument();
     });
   });
 });
